@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Itim", cursive;
+    background-color: #12181B;
+    
+}
+
+.background {
+    margin: 50px;
+    height: 100vh;
+    color: white;
+    z-index: 5;
+}
+
+
+.title {
+    /* border: solid red; */
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 50px;
+}
+
+.display {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.hide {
+    display: none;
+}
+
+.tile-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 300px;
+}
+
+.tile {
+    border: 3px solid white;
+    border-radius: 10%;
+    max-width: 100px;
+    min-height: 100px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+.controls {
+    /* border: solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#reset {
+    padding: 5px;
+    margin: 40px;
+    font-size: 28px;
+    width: 200px;
+    background-color: white;
+    border-radius: 2%;
+    border: none;
+    transition: .2s;
+}
+
+#reset:hover {
+    background-color: rgb(56, 55, 55);
+    color: white;
+}
