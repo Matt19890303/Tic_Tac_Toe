@@ -1,10 +1,11 @@
+// Vidoe - https://www.youtube.com/watch?v=B3pmT7Cpi24
 // https://github.com/javascriptacademy-stash/tic-tac-toe/blob/master/index.js
 
 window.addEventListener('DOMContentLoaded', () => {
     const tiles = Array.from(document.querySelectorAll('.tile'));
     const playerDisplay = document.querySelector('.display-player');
     const resetButton = document.querySelector('#reset');
-    const annnounce = document.querySelector('.display announcer hide');
+    const announcer = document.querySelector('.announcer');
 
     let board = ['','','','','','','','','',];
     let currentPlayer = 'X';
@@ -13,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // End Game State
     const playerXwon = 'PLAYER X WINS';
     const playerOwon = 'PLAYER O WINS';
-    const tie = "TIE";
+    const tie = "IT'S A DRAW";
 
         // Indices within the board
         // [0] [1] [2]
@@ -68,15 +69,15 @@ window.addEventListener('DOMContentLoaded', () => {
         const announce = (type) => {
             switch(type){
                 case playerOwon:
-                    announce.innerHTML = 'Player <span class="playerO">O</span> Won';
+                    announcer.innerHTML = playerXwon;
                     break;
                 case playerXwon:
-                    announce.innerHTML = 'Player <span class="playerX">X</span> Won';
+                    announcer.innerHTML = playerOwon;
                     break;
                 case tie:
-                    announce.innerHTML = 'Tie! Try Again';
+                    announcer.innerText = tie;
             }
-            annnounce.classList.remove('hide');
+            announcer.classList.remove('hide');
         };
 
 
@@ -140,13 +141,6 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // function resetBoard() {
-        //     document.querySelectorAll('.tile').value = "";
-        // }
-
-
-
-
         // attach an event listener for each tile
         tiles.forEach((tile, index) => {
             tile.addEventListener('click', () => userAction(tile, index));
@@ -154,4 +148,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
         resetButton.addEventListener('click', resetBoard);
+
     });
+
+
+    // Optional - If you’re feeling ambitious create an AI so that a player can play against the computer! 
+
+    // https://en.wikipedia.org/wiki/Minimax
+    // https://www.youtube.com/watch?v=trKjYdBASyQ
+
+    
